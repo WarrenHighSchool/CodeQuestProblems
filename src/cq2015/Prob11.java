@@ -57,7 +57,6 @@ public class Prob11{
 					Group 5: m, n
 					Group 6: r
 					Wild: h, w (wild means they match letters from any group 1-6)
-
 					*/
 					String soundex = "";
 					//One for loop for each step(one extra for loop to find first letter of numbered group char)
