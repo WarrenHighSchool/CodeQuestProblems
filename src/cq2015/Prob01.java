@@ -10,7 +10,7 @@ public class Prob01{
     public static void main(String[] args){
         try{
             //String to filePath
-            String filePath = "Prob01.in.txt";
+            String filePath = "inputs/2015/Prob01.in.txt";
             //New BufferedReader object
             BufferedReader br = new BufferedReader(new FileReader(filePath));
             //Read test cases into int value

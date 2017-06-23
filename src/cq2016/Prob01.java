@@ -7,7 +7,7 @@ public class Prob01{
     public static void main(String[] args){
         try {
             //String to filepath
-            String filePath = "src/cq2015/Prob01.in.txt";
+            String filePath = "inputs/2016/Prob01.in.txt";
             //Create new buffered reader object of a filereader
             BufferedReader br = new BufferedReader(new FileReader(filePath));
             //Read line for test cases
