@@ -4,11 +4,11 @@ import java.io.*;
 
 public class Prob11{
 	//Numbered group characters 
-	char[] numberedGroupChars = {'b', 'f', 'p', 'v', 'c', 'g', 'j', 'k', 'q', 's', 'x', 'z', 'd', 't', 'l', 'm', 'n', 'r', 'h', 'w'};
+	static final char[] numberedGroupChars = {'b', 'f', 'p', 'v', 'c', 'g', 'j', 'k', 'q', 's', 'x', 'z', 'd', 't', 'l', 'm', 'n', 'r', 'h', 'w'};
 	//File path
 	public static final String filePath = "Prob11.in.txt";
 	//Class for soundex word 
-	public static SoundexWord{
+	public static class SoundexWord{
 		//Instance variables 
 		public String soundex;
 		public int amtGenerated;
@@ -21,7 +21,7 @@ public class Prob11{
 		public String getSoundex(){
 			return soundex;
 		}
-		public int get amtGenerated(){
+		public int getAmtGenerated(){
 			return amtGenerated;
 		}
 		public void incremenetAmtGenerated(){
@@ -34,49 +34,53 @@ public class Prob11{
 	}
 	//Main
 	public static void main(String[] args){
-		//New BufferedReader object 
-		BufferedReader br = new BufferedReader(new FileReader(filePath));
-		//Get test cases 
-		int T = Integer.parseInt(br.readLine());
-		//Loop through test cases 
-		while(T-- > 0){
-			//Grab number of names that follow
-			int N = Integer.parseInt(br.readLine());
-			//Initialize empty array of SoundexWord type
-			SoundexWord[] words = new SoundexWord[N];
-			//Loop through names 
-			for(int i = 0; i < N; i++){
-				//Read name 
-				String name = br.readLine();
-				/*Make conditionals for each group like so:
-				Group 1: b, f, p, v
-				Group 2: c, g, j, k, q, s, x, z
-				Group 3: d, t
-				Group 4: l
-				Group 5: m, n
-				Group 6: r
-				Wild: h, w (wild means they match letters from any group 1-6)
-				
-				*/
-				String soundex = "";
-				//One for loop for each step(one extra for loop to find first letter of numbered group char)
-				//Find index of first numbered group char 
-				int indexOfNumberedGroupChar = 0;
-				for(int j = 0; j < name.length(); j++){
-					char curChar = name.charAt(j);
-					if(contains(numberedGroupChars, curChar)){
-						indexOfNumberedGroupChar = j;
-						break;
+		try {
+			//New BufferedReader object
+			BufferedReader br = new BufferedReader(new FileReader(filePath));
+			//Get test cases
+			int T = Integer.parseInt(br.readLine());
+			//Loop through test cases
+			while (T-- > 0) {
+				//Grab number of names that follow
+				int N = Integer.parseInt(br.readLine());
+				//Initialize empty array of SoundexWord type
+				SoundexWord[] words = new SoundexWord[N];
+				//Loop through names
+				for (int i = 0; i < N; i++) {
+					//Read name
+					String name = br.readLine();
+					/*Make conditionals for each group like so:
+					Group 1: b, f, p, v
+					Group 2: c, g, j, k, q, s, x, z
+					Group 3: d, t
+					Group 4: l
+					Group 5: m, n
+					Group 6: r
+					Wild: h, w (wild means they match letters from any group 1-6)
+
+					*/
+					String soundex = "";
+					//One for loop for each step(one extra for loop to find first letter of numbered group char)
+					//Find index of first numbered group char
+					int indexOfNumberedGroupChar = 0;
+					for (int j = 0; j < name.length(); j++) {
+						char curChar = name.charAt(j);
+						if (contains(numberedGroupChars, curChar)) {
+							indexOfNumberedGroupChar = j;
+							break;
+						}
 					}
-				}
-				for(int j = indexOfNumberedGroupChar; j < name.length(); j++){
-					char curChar = name.charAt(j);
-					char nextChar = name.charAt(j + 1);
-					if(getGroup(curChar) == getGroup(nextChar)){
-						
+					for (int j = indexOfNumberedGroupChar; j < name.length(); j++) {
+						char curChar = name.charAt(j);
+						char nextChar = name.charAt(j + 1);
+						if (getGroup(curChar) == getGroup(nextChar)) {
+
+						}
 					}
 				}
 			}
+		} catch (Exception e){
+			e.printStackTrace();
 		}
 	}
 	

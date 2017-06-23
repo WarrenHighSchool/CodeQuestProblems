@@ -5,13 +5,13 @@ import java.io.*;
 public class Prob06{
 	public static final String filePath = "Prob06.in.txt";
 	
-	public class WordWorm{
+	public static class WordWorm{
 		public String word;
 		public boolean isValid;
 		
-		public WordWorm(String word, boolean isValid){
-			this.word = word;
-			this.isValid = isValid;
+		public WordWorm(String theWord, boolean theIsValid){
+			word = theWord;
+			isValid = theIsValid;
 		}
 		
 		public String toString(){
@@ -43,7 +43,7 @@ public class Prob06{
 					String[] inLineSpl = inLine.split(" ");
 					//Add to char array properly
 					for(int j = 0; j < C; j++){
-						chars[R][C] = inLineSpl[C];
+						chars[R][C] = inLineSpl[C].charAt(0);
 					}
 				}
 				//Grab number of words
@@ -69,7 +69,7 @@ public class Prob06{
 		}
 	}
 	
-	public static boolean fineWormWord(char[][] chars, String inLine){
+	public static boolean findWormWord(char[][] chars, String inLine){
 		char[] inLineSpl = inLine.toCharArray();
 		boolean isFound = false;
 		while(!isFound){
