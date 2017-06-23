@@ -8,7 +8,7 @@ import java.math.BigInteger;
  * Created by RobertPC on 6/22/2017.
  */
 public class Prob02{
-    public static final String filePath = "Prob02.in.txt";
+    public static final String filePath = "inputs/2015/Prob02.in.txt";
 
     public static void main(String[] args){
         try{

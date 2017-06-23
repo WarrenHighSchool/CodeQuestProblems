@@ -1,12 +1,13 @@
 package cq2015;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
 
 public class Prob11{
 	//Numbered group characters 
 	static final char[] numberedGroupChars = {'b', 'f', 'p', 'v', 'c', 'g', 'j', 'k', 'q', 's', 'x', 'z', 'd', 't', 'l', 'm', 'n', 'r', 'h', 'w'};
 	//File path
-	public static final String filePath = "Prob11.in.txt";
+	public static final String filePath = "inputs/2015/Prob11.in.txt";
 	//Class for soundex word 
 	public static class SoundexWord{
 		//Instance variables 

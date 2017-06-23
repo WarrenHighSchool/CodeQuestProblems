@@ -6,7 +6,7 @@ import java.util.Comparator;
 
 public class Prob05{
 	//Text file to read
-	public static final String filePath = "Prob05.in.txt";
+	public static final String filePath = "inputs/2015/Prob05.in.txt";
 	//Class to keep track of each per capita income for a respective year
 	public static class Income{
 		//Instance variables 

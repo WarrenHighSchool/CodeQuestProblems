@@ -3,7 +3,7 @@ package cq2015;
 import java.io.*;
 
 public class Prob06{
-	public static final String filePath = "Prob06.in.txt";
+	public static final String filePath = "inputs/2015/Prob06.in.txt";
 	
 	public static class WordWorm{
 		public String word;

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Prob07{
 	//Path to file 
-	public static final String filePath = "Prob07.in.txt";
+	public static final String filePath = "inputs/2015/Prob07.in.txt";
 	//Class for enemy ships
 	public static class EnemyShip{
 		//Instance variables

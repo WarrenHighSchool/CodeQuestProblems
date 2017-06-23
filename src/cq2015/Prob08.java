@@ -4,7 +4,7 @@ import java.io.*;
 
 public class Prob08{
 	//String to file path
-	public static final String filePath = "Prob08.in.txt";
+	public static final String filePath = "inputs/2015/Prob08.in.txt";
 	//Main
 	public static void main(String[] args){
 		try{
