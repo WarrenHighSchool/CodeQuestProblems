@@ -9,9 +9,9 @@ public class Prob06{
 		public String word;
 		public boolean isValid;
 		
-		public WordWorm(String theWord, boolean theIsValid){
-			word = theWord;
-			isValid = theIsValid;
+		public WordWorm(String Word, boolean isValid){
+			this.word = word;
+			this.isValid = isValid;
 		}
 		
 		public String toString(){
