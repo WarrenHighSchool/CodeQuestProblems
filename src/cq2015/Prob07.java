@@ -145,6 +145,8 @@ public class Prob07{
 					amtDestroyed++;
 				}
 			}
+			//Clean up
+			br.close();
 		} catch(Exception e){
 			e.printStackTrace();
 		}
