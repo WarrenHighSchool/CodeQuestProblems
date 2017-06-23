@@ -3,6 +3,12 @@ package cq2015;
 import java.io.*;
 import java.util.ArrayList;
 
+/**\
+ * Prob07 is a solution to the CodeQuest Problem #7(2015 packet).
+ *
+ * @author RobertPC
+ * @version 1.0
+ */
 public class Prob07{
 	//Path to file 
 	public static final String filePath = "inputs/2015/Prob07.in.txt";
@@ -13,14 +19,28 @@ public class Prob07{
 		public String classType;
 		public int x;
 		public int y;
-		//Constructor
+		/**
+		 *  Constructs the EnemyShip class with name, classType, x position, and y position
+		 *
+		 *  @param name name of the enemy ship to be constructed
+		 *  @param classType type of class of enemy ship to be constructed
+		 *  @param x x-position of enemy ship at time of instantiation
+		 *  @param y y-position of enemy ship at time of instantiation
+		 */
 		public EnemyShip(String name, String classType, int x, int y){
 			this.name = name;
 			this.classType = classType;
 			this.x = x;
 			this.y = y;
 		}
-		//Advances the ship based on the class type of the ship
+
+		/**
+		 * Advances the ship based on its appropriate class type.
+		 * Class Type A: Advance 10 units
+		 * Class Type B: Advance 20 units
+		 * Class Type C: Advance 30 units
+		 *
+		 */
 		public void advance(){
 			switch(classType){
 				case "A": x -= 10;
@@ -31,15 +51,30 @@ public class Prob07{
 				break;
 			}
 		}
-		//Getter method to get x location
+
+		/**
+		 * Getter method to get current X position of ship
+		 *
+		 * @return X-Position of ship
+         */
 		public int getX(){
 			return x;
 		}
-		//Getter method to get y location
+
+		/**
+		 * Getter method to get current Y position of ship
+		 *
+		 * @return Y-Position of ship
+         */
 		public int getY(){
 			return y;
 		}
-		//Return in format of name and the ship's x location
+
+		/**
+		 * Return name of ship with x-location
+		 *
+		 * @return name of ship and x-pos in format: "!name! xLoc: !x!"
+         */
 		public String toString(){
 			return name + " xLoc: " + x;
 		}

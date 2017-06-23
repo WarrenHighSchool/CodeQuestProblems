@@ -1,6 +1,7 @@
 package cq2015;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.text.DecimalFormat;
 import java.math.RoundingMode;
 
