@@ -5,7 +5,7 @@ public class Prob11{
 		//Letters in order. Indexes will correspond with the char array of the cipher 
 		final char[] letters = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
 		//String to file
-		String filePath = "Prob11.in.txt";
+		String filePath = "inputs/2016/Prob11.in.txt";
 		//BufferedReader object
 		BufferedReader br = new BufferedReader(new FileReader(filePath));
 		//Grab test cases

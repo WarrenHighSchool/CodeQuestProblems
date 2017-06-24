@@ -3,7 +3,7 @@ import java.io.*;
 public class Prob06{
 	public static void main(String[] args) throws FileNotFoundException,IOException{
 		//String to file 
-		String filePath = "Prob06.in.txt";
+		String filePath = "inputs/2016/Prob06.in.txt";
 		//New BufferedReader instace
 		BufferedReader br = new BufferedReader(new FileReader(filePath));
 		//Grab test cases string 

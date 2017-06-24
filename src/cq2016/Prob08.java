@@ -2,7 +2,6 @@ package cq2016;
 
 import java.io.*;
 import java.util.*;
-import static java.lang.String.CASE_INSENITIVE_ORDER;
 
 public class Prob08{
 	//Song class to keep track of song-artist pairs 
@@ -53,7 +52,7 @@ public class Prob08{
 	}
 	public static void main(String[] args) throws FileNotFoundException,IOException{
 		//String to file path
-		String file = "Prob08.in.txt";
+		String file = "inputs/2016/Prob08.in.txt";
 		//New BufferedReader object
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		//Read test cases

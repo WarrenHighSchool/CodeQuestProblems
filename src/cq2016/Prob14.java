@@ -5,7 +5,7 @@ import java.util.*;
 /*
 6/23/17 5:19 PM PST - Not finished
 */
-public class Prob14{
+public class 	Prob14{
 	public static class Frame{
 		public String firstMove;
 		public String secondMove;
@@ -33,7 +33,7 @@ public class Prob14{
 	
 	public static void main(String[] args) throws FileNotFoundException,IOException{
 		//Read file 
-		String file = "cq2016.Prob14.in.txt";
+		String file = "inputs/2016/Prob14.in.txt";
 		//New buffered reader object
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		//grab test cases 

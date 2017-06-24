@@ -6,7 +6,7 @@ import java.text.DecimalFormat;
 import java.math.RoundingMode;
 
 public class Prob05_v2{
-	public static final String fileIn = "Prob05.in.txt";
+	public static final String fileIn = "inputs/2016/Prob05.in.txt";
 	
 	public static void main(String[] args){
 		try{

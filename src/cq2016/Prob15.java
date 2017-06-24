@@ -4,7 +4,7 @@ import java.util.*;
 public class Prob15{
 	public static void main(String[] args) throws FileNotFoundException,IOException{
 		//String to file 
-		String file = "Prob15.in.txt";
+		String file = "inputs/2016/Prob15.in.txt";
 		//New BufferedReader object
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		//Acquire test cases 

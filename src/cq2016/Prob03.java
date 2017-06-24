@@ -7,7 +7,7 @@ public class Prob03{
         int secondSide = 0;
         int thirdSide = 0;
         //Path to text file(in this example, the text file is in the same directory as the java file)
-        String filePath = "Prob03.in.txt";
+        String filePath = "inputs/2016/Prob03.in.txt";
         //New BufferedReader obeject of a FileReader which reads the text file
         BufferedReader br = new BufferedReader(new FileReader(filePath));
         //Read first line to obtain test cases in string form

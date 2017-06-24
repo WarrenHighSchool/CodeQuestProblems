@@ -8,7 +8,7 @@ public class Prob02{
         int nickels = 0;
         int pennies = 0;
         //Path to text file that will be read
-        String filePath = "Prob02.in.txt";
+        String filePath = "inputs/2016/Prob02.in.txt";
         //New BufferedReader object to read text file
         BufferedReader br = new BufferedReader(new FileReader(filePath));
         //Grab first number using read line that will be stored into a string.

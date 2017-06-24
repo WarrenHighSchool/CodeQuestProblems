@@ -78,7 +78,7 @@ public class Prob06_v2{
 	*/
 	public static void main(String[] args) throws FileNotFoundException,IOException{
 		//String to file path 
-		String file = "Prob06.in.txt";
+		String file = "inputs/2016/Prob06.in.txt";
 		//BufferedReader object 
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		//Grab test cases 
