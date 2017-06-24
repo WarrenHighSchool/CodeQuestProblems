@@ -1,3 +1,5 @@
+package cq2016;
+
 import java.io.*;
 
 public class Prob03{
