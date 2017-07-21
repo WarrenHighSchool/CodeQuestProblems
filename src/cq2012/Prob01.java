@@ -11,16 +11,24 @@ public class Prob01 {
 
     public static void main(String[] args){
         try{
-        String inLine = "";
-        BufferedReader br = new BufferedReader(new FileReader(filePath));
-        double total = 0.0;
+            //Initialize inLine
+            String inLine = "";
+            //Prepare to read file
+            BufferedReader br = new BufferedReader(new FileReader(filePath));
+            //Initialize total
+            double total = 0.0;
+            //Loop while br isn't at end of file
             while((inLine = br.readLine()) != null){
+                //Initialize amount for each type of coin
                 int quarters = 0;
                 int dimes = 0;
                 int nickels = 0;
                 int halfdollars = 0;
                 int pennies = 0;
+                //Split input line so on one side there is type of coin, and other has the quantity
                 String[] inLineSpl = inLine.split("=");
+                //Use a switch for which type of coin is being used
+                //Add the quantity to the amount of that certain coin
                 switch(inLineSpl[0]) {
                     case "QUARTER":
                         quarters += Integer.parseInt(inLineSpl[1]);
@@ -38,19 +46,17 @@ public class Prob01 {
                         pennies += Integer.parseInt(inLineSpl[1]);
                         break;
                 }
-                //System.out.println("Adding " + (quarters * 0.25) + " to " + total);
+                //Add based on each type of coin
                 total += (0.0 + (quarters * 0.25));
-                //System.out.println("Adding " + (dimes * 0.10) + " to " + total);
                 total += (0.0 + (dimes * 0.10));
-                //System.out.println("Adding " + (nickels * 0.05) + " to " + total);
                 total += (0.0 + (nickels * 0.05));
-                //System.out.println("Adding " + (halfdollars * 0.50) + " to " + total);
                 total += (0.0 + (halfdollars * 0.50));
-                //System.out.println("Adding " + (pennies * 0.01) + " to " + total);
                 total += (0.0 + (pennies * 0.01));
-                //System.out.println("Total = " + total);
             }
+            //Print it
             System.out.println(total);
+            //Clean up
+            br.close();
         } catch (Exception e){
             e.printStackTrace();
         }

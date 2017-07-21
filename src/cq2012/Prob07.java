@@ -15,6 +15,13 @@ public class Prob07 {
         public ArrayList<String> key;
         public int pointValue;
 
+        /**
+         * Constructs a Scanton object
+         *
+         * @param name name of the student
+         * @param key an ArrayList of strings containing the students scorecard
+         * @param pointValue the value for each point
+         */
         public Scantron(String name, ArrayList<String> key, int pointValue){
             this.name = name;
             this.key = key;
@@ -63,35 +70,55 @@ public class Prob07 {
     }
     public static void main(String[] args){
         try{
+            //Prepare to read the file
             BufferedReader br = new BufferedReader(new FileReader(filePath));
+            //Initialize inLine
             String inLine = "";
+            //Grab the point value for each problem
             int problemValue = Integer.parseInt(br.readLine());
+            //Initialize amount of problems(is not given, but can be found and is consistent from student to student)
             int probAmt = 0;
+            //Initialize ArrayList that will contain Key
             ArrayList<String> key = new ArrayList<String>();
+            //Keep looping until the line read isn't scantron data
             while((inLine = br.readLine()).charAt(0) != 'S'){
+                //Add the line of text to the scantron data
                 key.add(inLine);
+                //Increment the amount of problems
                 probAmt++;
             }
+            //Now construct our master scantron key
             Scantron master = new Scantron("master", key, problemValue);
+            //We dont know how many students there are, so we use an arraylist of Scantron objects for each student
             ArrayList<Scantron> students = new ArrayList<Scantron>();
+            //Since in our earlier loop checking for student ended at the same of the student, we must make a first student array list
             ArrayList<String> firstStudentKey = new ArrayList<String>();
+            //Loop through problem amt and add it to firstStudentKey
             for(int i = 0; i < probAmt; i++){
                 firstStudentKey.add(br.readLine());
             }
+            //Add the first student to the students arraylist
             students.add(new Scantron(inLine, firstStudentKey, problemValue));
+            //Now we can go through the rest of the students
             while((inLine = br.readLine()) != null){
                 //inLine is now at Student #
                 String student = inLine;
+                //Initialize student key
                 ArrayList<String> studentKey = new ArrayList<String>();
+                //Fill student key
                 for(int i = 0; i < probAmt; i++){
                     studentKey.add(br.readLine());
                 }
+                //Add that to the students arraylist
                 students.add(new Scantron(student, studentKey, problemValue));
             }
+            //Loop through students array list
             for(int i = 0; i < students.size(); i++){
-                //printScantron(students.get(i));
+                //Print out the comparison between the master Scantron and the selected student
                 System.out.println(students.get(i).name + ": " +  master.compareTo(students.get(i)));
             }
+            //Clean up
+            br.close();
         } catch (Exception e){
             e.printStackTrace();
         }

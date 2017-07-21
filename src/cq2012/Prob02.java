@@ -12,12 +12,18 @@ public class Prob02 {
 
     public static void main(String[] args){
         try{
+            //Prepare to read file
             BufferedReader br = new BufferedReader(new FileReader(filePath));
+            //Initialize inLine
             String inLine = "";
+            //Loop while br isn't at end of file
             while((inLine = br.readLine()) != null){
+                //Split string into two numbers
                 String[] inLineSpl = inLine.split(" ");
+                //Parse them to ints
                 int timesSub = Integer.parseInt(inLineSpl[0]);
                 int heraldSub = Integer.parseInt(inLineSpl[1]);
+                //Now just check for which one is greater(the else is executed if they are equal)
                 if(timesSub > heraldSub){
                     System.out.println("Times has " + (timesSub - heraldSub) + " more subscribers");
                 }
