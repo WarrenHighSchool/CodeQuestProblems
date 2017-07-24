@@ -29,7 +29,7 @@ public class Prob03 {
             while((inLine = br.readLine()) != null){
                 //Split the line the right way
                 String extension = inLine.split("\\.")[1];
-                //If we dont already having a mapping for our extension, add one and make its value 1
+                //If we dont already having a mapping for our extension, add one and make its value 0
                 if(!map.containsKey(extension)){
                     names.add(extension);
                     map.put(extension, 0);
