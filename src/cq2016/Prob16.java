@@ -98,7 +98,7 @@ public class Prob16{
 	public static void main(String[] args) throws FileNotFoundException,IOException{
 		//File path
 		String file = "inputs/2016/Prob16.in.txt";
-		//New BufferedResder object
+		//New BufferedReader object
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		//Get test cases
 		int testCases = Integer.parseInt(br.readLine());
@@ -116,7 +116,7 @@ public class Prob16{
 					}
 				}
 			}
-			//Grab numstars able to havest 
+			//Grab numstars able to harvest
 			int numStars = Integer.parseInt(br.readLine());
 			//Loop through numstars 
 			for(int j = 0; j < numStars; j++){

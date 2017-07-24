@@ -29,7 +29,12 @@ public class Prob01{
             e.printStackTrace();
         }
     }
-    //Method to draw board of '#' using a nested for loop, by creating a n * n grid
+
+    /**
+     * Method to draw board of '#' using a nested for loop, by creating a n * n grid
+     *
+     * @param n integer to indicate how many "#"'s will be drawn
+     */
      public static void drawBoard(int n){
         for(int i = 0; i < n; i++){ //Both loops iterate n times
             for(int j = 0; j < n; j++){
