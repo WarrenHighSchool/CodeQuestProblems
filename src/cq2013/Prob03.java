@@ -3,9 +3,9 @@ package cq2013;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Iterator;
 
 /**
  * Created by RobertPC on 7/21/2017.
@@ -22,7 +22,7 @@ public class Prob03 {
             Map<String, Integer> map = new HashMap<String, Integer>();
             //Initialize arraylist of names
             //We need to use an arraylist of names because we need to list the file extensions the way they were given in the file
-            ArrayList<String> names = new ArrayList<String>();
+            List<String> names = new ArrayList<String>();
             //Prepare to read file
             BufferedReader br = new BufferedReader(new FileReader(filePath));
             //Loop while br isn't at end of file
