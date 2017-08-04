@@ -32,7 +32,7 @@ public class Prob03 {
                 Integer[] ints = new Integer[tokens.length];
                 //Fill the ints array
                 for(int i = 0; i < tokens.length; i++){
-                    ints[i] = new Integer(Integer.parseInt(tokens[i]));
+                    ints[i] = Integer.parseInt(tokens[i]);
                 }
                 //Sort that out(in descending order)
                 Arrays.sort(ints, new IntegerComparator());

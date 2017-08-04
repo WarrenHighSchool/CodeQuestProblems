@@ -3,7 +3,7 @@ package cq2016;
 import java.io.*;
 
 public class Prob03{
-    public static void main(String[] args) throws FileNotFoundException,IOException{
+    public static void main(String[] args) throws IOException{
         //Sides of the triangles
         int firstSide = 0;
         int secondSide = 0;

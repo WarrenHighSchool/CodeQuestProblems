@@ -25,13 +25,13 @@ public class Prob04 {
                 //Split the message by spaces(so each index will contain a word)
                 String[] words = inLine.split(" ");
                 //Loop through each word
-                for(int i = 0; i < words.length; i++){
+                for (String word : words) {
                     //Now split it into each letter
-                    String[] letters = words[i].split("-");
+                    String[] letters = word.split("-");
                     //Loop through that letters array
-                    for(int j = 0; j < letters.length; j++){
+                    for (String letter : letters) {
                         //Add the letter from the keySet of the index which is letters[j]
-                        decodedMsg += keySet[Integer.parseInt(letters[j]) - 1];
+                        decodedMsg += keySet[Integer.parseInt(letter) - 1];
                     }
                     //Add a space so each word is separated
                     decodedMsg += ' ';

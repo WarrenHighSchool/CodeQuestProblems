@@ -91,7 +91,7 @@ public class Prob07{
 				//Read numbers of alien ships that follow
 				int N = Integer.parseInt(br.readLine());
 				//Initialize ArrayList of EnemyShip objects 
-				ArrayList<EnemyShip> enemyShips = new ArrayList<EnemyShip>();
+				ArrayList<EnemyShip> enemyShips = new ArrayList<>();
 				//Loop through numShips
 				for(int i = 0; i < N; i++){
 					//Read line 

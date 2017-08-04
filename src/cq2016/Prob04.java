@@ -3,7 +3,7 @@ package cq2016;
 import java.io.*;
 
 public class Prob04{
-	public static void main(String[] args) throws FileNotFoundException,IOException{
+	public static void main(String[] args) throws IOException{
 		//String to file 
 		String filePath = "inputs/2016/Prob04.in.txt";
 		//Initialize BufferedReader 
@@ -51,7 +51,7 @@ public class Prob04{
 			char currentChar = first.charAt(i);
 			//Loop through second array
 			for(int j = 0; j < second.length(); j++){
-				if(contains(blacklistedIndexes, j) == false){
+				if(!contains(blacklistedIndexes, j)){
 					//System.out.println("(OUTSIDE IF)j value is " + j);
 					if(currentChar == second.charAt(j)){
 						//System.out.println(String.format("(INSIDE IF)j value is %d", j));
@@ -62,8 +62,8 @@ public class Prob04{
 			}
 		}
 		//Loop through checks array
-		for(int i = 0; i < checks.length; i++){
-			if(checks[i] != true){
+		for (boolean check : checks) {
+			if (!check) {
 				returnValue = false;
 				break;
 			}
@@ -73,11 +73,11 @@ public class Prob04{
 	
 	public static boolean contains(final int[] array, final int v){
 		boolean outputValue = false;
-		
-		for(int i = 0; i < array.length; i++){
-			if(array[i] == v){
+
+		for (int anArray : array) {
+			if (anArray == v) {
 				outputValue = true;
-				break; 
+				break;
 			}
 		}
 		return outputValue;

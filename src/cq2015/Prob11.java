@@ -65,7 +65,7 @@ public class Prob11{
 					int indexOfNumberedGroupChar = 0;
 					for (int j = 0; j < name.length(); j++) {
 						char curChar = name.charAt(j);
-						if (contains(numberedGroupChars, curChar)) {
+						if (contains(curChar)) {
 							indexOfNumberedGroupChar = j;
 							break;
 						}
@@ -84,14 +84,13 @@ public class Prob11{
 		}
 	}
 	
-	public static boolean contains(char[] numberedGroupChars, char curChar){
-		boolean returnVal = false;
-		for(char c: numberedGroupChars){
+	public static boolean contains(char curChar){
+		for(char c: Prob11.numberedGroupChars){
 			if (c == curChar){
 				return true;
 			}
 		}
-		return returnVal;
+		return false;
 	}
 	
 	public static int getGroup(char c){

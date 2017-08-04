@@ -50,7 +50,7 @@ public class Prob08{
 			System.out.println(a.toString());
 		}
 	}
-	public static void main(String[] args) throws FileNotFoundException,IOException{
+	public static void main(String[] args) throws IOException{
 		//String to file path
 		String file = "inputs/2016/Prob08.in.txt";
 		//New BufferedReader object

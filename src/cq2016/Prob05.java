@@ -3,7 +3,7 @@ package cq2016;
 import java.io.*;
 
 public class Prob05{
-	public static void main(String[] args) throws FileNotFoundException,IOException{
+	public static void main(String[] args) throws IOException{
 		//String to filepath
 		String filePath = "inputs/2016/Prob05.in.txt";
 		//Create new BufferedReader instance of a file reader for the text file 

@@ -3,7 +3,7 @@ package cq2016;
 import java.io.*;
 
 public class Prob11{
-	public static void main(String[] args) throws FileNotFoundException,IOException{
+	public static void main(String[] args) throws IOException{
 		//Letters in order. Indexes will correspond with the char array of the cipher 
 		final char[] letters = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
 		//String to file
@@ -43,12 +43,7 @@ public class Prob11{
 						char curChar = line.charAt(k);
 						//is it a capital letter?
 						boolean isCapital = false;
-						if(Character.toString(curChar).equals(Character.toString(curChar).toUpperCase())){
-							isCapital = true;
-						}
-						else{
-							isCapital = false;
-						}
+						isCapital = Character.toString(curChar).equals(Character.toString(curChar).toUpperCase());
 						//parse through the two arrays
 						//for encrypting, we find the index in the ordered letters, and use that index for the cipher array 
 						if(curChar == ' '){ //is there is a space, just add a space 
@@ -73,12 +68,7 @@ public class Prob11{
 						char curChar = line.charAt(k);
 						//capital?
 						boolean isCapital = false;
-						if(Character.toString(curChar).equals(Character.toString(curChar).toUpperCase())){
-							isCapital = true;
-						}
-						else{
-							isCapital = false;
-						}
+						isCapital = Character.toString(curChar).equals(Character.toString(curChar).toUpperCase());
 						//parse through the two arrays
 						//for decrypting, we find the index in the cipher, and use the index of the normal letters 
 						if(curChar == ' '){ //is there is a space, just add a space 
@@ -101,8 +91,8 @@ public class Prob11{
 	}
 	/**
 	*helper method 
-	*@param c1 
-	*@param c2
+	*@param c1 array to search through
+	*@param c2 char to look for in array
 	*/
 	public static int findIndex(char[] c1, char c2){
 		int returnValue = -1; //return -1 if not found 

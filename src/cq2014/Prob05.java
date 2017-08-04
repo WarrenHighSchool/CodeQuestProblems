@@ -68,12 +68,11 @@ public class Prob05 {
      * @return the check bit that would make the total valid
      */
     public static int findProperCheckBit(int total){
-        int properCheckBit = -1;
         for(int i = 0; i < 10; i++){
             if((total + i) % 10 == 0){
                 return i;
             }
         }
-        return properCheckBit;
+        return -1;
     }
 }

@@ -1,10 +1,9 @@
 package cq2016;
 
 import java.io.*;
-import java.util.*;
 
 public class Prob15{
-	public static void main(String[] args) throws FileNotFoundException,IOException{
+	public static void main(String[] args) throws IOException{
 		//String to file 
 		String file = "inputs/2016/Prob15.in.txt";
 		//New BufferedReader object

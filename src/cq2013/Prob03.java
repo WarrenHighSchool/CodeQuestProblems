@@ -19,10 +19,10 @@ public class Prob03 {
             //Initialize inLine
             String inLine = "";
             //Initialize hashmap
-            Map<String, Integer> map = new HashMap<String, Integer>();
+            Map<String, Integer> map = new HashMap<>();
             //Initialize arraylist of names
             //We need to use an arraylist of names because we need to list the file extensions the way they were given in the file
-            List<String> names = new ArrayList<String>();
+            List<String> names = new ArrayList<>();
             //Prepare to read file
             BufferedReader br = new BufferedReader(new FileReader(filePath));
             //Loop while br isn't at end of file
@@ -39,8 +39,8 @@ public class Prob03 {
                 //Put the proper value in
                 map.put(extension, count + 1);
             }
-            for(int i = 0; i < names.size(); i++){
-                System.out.println(names.get(i) + " " + map.get(names.get(i)));
+            for(String name : names) {
+                System.out.println(name + " " + map.get(name));
             }
         } catch (Exception e){
             e.printStackTrace();

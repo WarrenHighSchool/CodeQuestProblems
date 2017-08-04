@@ -4,7 +4,7 @@ import java.io.*;
 import java.lang.*;
 
 public class Prob09{
-	public static void main(String[] args) throws FileNotFoundException,IOException{
+	public static void main(String[] args) throws IOException{
 		//String to filePathe
 		String filePath = "inputs/2016/Prob09.in.txt";
 		//Create new bufferedreader

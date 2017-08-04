@@ -31,7 +31,7 @@ public class 	Prob14{
 		}
 	}
 	
-	public static void main(String[] args) throws FileNotFoundException,IOException{
+	public static void main(String[] args) throws IOException{
 		//Read file 
 		String file = "inputs/2016/Prob14.in.txt";
 		//New buffered reader object

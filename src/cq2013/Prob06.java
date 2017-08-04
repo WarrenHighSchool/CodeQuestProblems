@@ -66,7 +66,7 @@ public class Prob06 {
             //Initialize inLine
             String inLine = "";
             //Initialize ArrayList of Person objects
-            List<Person> people = new ArrayList<Person>();
+            List<Person> people = new ArrayList<>();
             //Prepare to read file
             BufferedReader br = new BufferedReader(new FileReader(filePath));
             //Loop while br isn't at end of file
@@ -83,7 +83,7 @@ public class Prob06 {
                 people.add(new Person(tokens[0], totalScore));
             }
             //Sort our arraylist out
-            Collections.sort(people, new PersonComparator());
+            people.sort(new PersonComparator());
             //Print out winners
             System.out.println("FIRST:" + people.get(0).getName());
             System.out.println("SECOND:" + people.get(1).getName());

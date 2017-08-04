@@ -19,7 +19,7 @@ public class Prob04 {
             BufferedReader br = new BufferedReader(new FileReader(filePath));
             //Loop while not at end of file
             while((inLine = br.readLine()) != null){
-                StringBuffer buf = new StringBuffer();
+                StringBuilder buf = new StringBuilder();
                 //Split into an array of strings
                 String[] tokens = inLine.split(",");
                 //Make int array same length of string array

@@ -1,7 +1,7 @@
 package cq2016;
 
 import java.io.*;
-import java.util.*;
+
 
 public class Prob06_v2{
 	public static class Student{
@@ -78,7 +78,7 @@ public class Prob06_v2{
 		}
 	}
 	*/
-	public static void main(String[] args) throws FileNotFoundException,IOException{
+	public static void main(String[] args) throws IOException{
 		//String to file path 
 		String file = "inputs/2016/Prob06.in.txt";
 		//BufferedReader object 

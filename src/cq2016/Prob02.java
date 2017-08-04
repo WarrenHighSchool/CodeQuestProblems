@@ -3,7 +3,7 @@ package cq2016;
 import java.io.*;
 
 public class Prob02{
-    public static void main(String[] args) throws FileNotFoundException,IOException{
+    public static void main(String[] args) throws IOException{
         //Variables for each coin, all initialized to zero
         int quarters = 0;
         int dimes = 0;

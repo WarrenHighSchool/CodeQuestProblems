@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 public class Prob04_v2{
-	public static void main(String[] args) throws FileNotFoundException,IOException{
+	public static void main(String[] args) throws IOException{
 		//file 
 		String file = "inputs/2016/Prob04.in.txt";
 		//New buffered reader object 
@@ -32,8 +32,6 @@ public class Prob04_v2{
 	}
 	
 	public static boolean isAnagram(String word1, String word2){
-		//intialize return value
-		boolean returnValue = true;
 		//check if sizes of both words are the same or if the words are the same 
 		if(word1.length() != word2.length() || word1.equals(word2)){
 			return false;
@@ -50,6 +48,6 @@ public class Prob04_v2{
 				return false;
 			}
 		}
-		return returnValue;
+		return true;
 	}
 }
