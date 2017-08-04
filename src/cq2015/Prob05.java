@@ -7,19 +7,33 @@ import java.util.Comparator;
 public class Prob05{
 	//Text file to read
 	public static final String filePath = "inputs/2015/Prob05.in.txt";
-	//Class to keep track of each per capita income for a respective year
+
+	/**
+	 * Class to keep track of each per capita income for a respective year
+	 */
 	public static class Income{
 		//Instance variables 
 		public int year;
 		public double perCapIncome;
 		public int asteriskAmt;
-		//Constructor
+
+		/**
+		 * Constructs an Income object with perCapIncome, year, and calculates the amount of asterisks
+		 *
+		 * @param perCapIncome the per capita income of the Income object
+		 * @param year the year of the per capita income
+		 */
 		public Income(double perCapIncome, int year){
 			this.perCapIncome = perCapIncome;
 			this.year = year;
 			asteriskAmt = (int)(perCapIncome/1000);
 		}
-		//toString
+
+		/**
+		 * returns the year with the proper amount of asterisks
+		 *
+		 * @return returns year with asteriskAmt in format "year *****"
+		 */
 		public String toString(){
 			String returnStr = year + " ";
 			for(int i = 0; i < asteriskAmt; i++){

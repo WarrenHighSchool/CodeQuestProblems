@@ -13,21 +13,48 @@ public class Prob11{
 		//Instance variables 
 		public String soundex;
 		public int amtGenerated;
-		
+
+		/**
+		 * Takes a certain soundex generated from a word, and stores it into a string, also having a counter. If a specific soundex occurs more than once,
+		 * then amtGenerated will be at a value greater than one and will be printed out.
+		 *
+		 * @param soundex the soundex generated from going through the word
+		 */
 		public SoundexWord(String soundex){
 			this.soundex = soundex;
 			amtGenerated = 1;
 		}
-		
+
+		/**
+		 * Retrieves the current soundex
+		 *
+		 * @return the soundex as a string
+		 */
 		public String getSoundex(){
 			return soundex;
 		}
+
+		/**
+		 * Retrieves the current amount of times this soundex was generated
+		 *
+		 * @return amount specific soundex was generated
+		 */
 		public int getAmtGenerated(){
 			return amtGenerated;
 		}
+
+		/**
+		 * Increments amtGenerated
+		 */
 		public void incremenetAmtGenerated(){
 			amtGenerated++;
 		}
+
+		/**
+		 * Returns the soundex with the amount generated following it
+		 *
+		 * @return soundex with amtGenerated in format "soundex amtGenerated"
+		 */
 		public String toString(){
 			return soundex + " " + amtGenerated;
 		}
@@ -71,9 +98,11 @@ public class Prob11{
 						}
 					}
 					for (int j = indexOfNumberedGroupChar; j < name.length(); j++) {
-						char curChar = name.charAt(j);
+						char curChar = name.charAt(indexOfNumberedGroupChar);
 						char nextChar = name.charAt(j + 1);
-						if (getGroup(curChar) == getGroup(nextChar)) {
+						int curCharGroup = -1;
+						int nextCharGroup = -1;
+						if(!(curChar == 'h' || curChar == 'w')){
 
 						}
 					}

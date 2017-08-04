@@ -1,6 +1,5 @@
 package cq2015;
 
-
 import java.io.*;
 import java.math.BigInteger;
 

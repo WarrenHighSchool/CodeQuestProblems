@@ -2,6 +2,8 @@ package cq2015;
 
 import java.io.*;
 
+//Unfinished 6/26/17 5:49PM PST
+
 public class Prob06{
 	public static final String filePath = "inputs/2015/Prob06.in.txt";
 	
