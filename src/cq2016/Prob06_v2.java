@@ -50,34 +50,6 @@ public class Prob06_v2{
 			gpa = (double)gradePointsTotal / totalCreditHours; 
 		}
 	}
-	/*
-	//Comparator for sorting students 
-	public static class StudentComparator implements Comparator<Student>{
-		public int compare(Student a, Student b){
-			int rslt = 0;
-			//First check if a gpa if higher than the other and return a value. If gpa's are equal, then move on to compare the credit hours 
-			if(a.gpa < b.gpa){
-				rslt = -1;
-			}
-			else if (a.gpa > b.gpa){
-				rslt = 1;
-			}
-			else{
-				rslt = 0;
-			}
-			//Compare credit hours 
-			if(rslt == 0){
-				if(a.totalCreditHours < b.totalCreditHours){
-					rslt = -1;
-				}
-				else{
-					rslt = 1;
-				}
-			}
-			return rslt;
-		}
-	}
-	*/
 	public static void main(String[] args) throws IOException{
 		//String to file path 
 		String file = "inputs/2016/Prob06.in.txt";
@@ -102,17 +74,11 @@ public class Prob06_v2{
 				//Set name and data string 
 				String name = lineSplit[0];
 				String gradeData = lineSplit[1];
-				//Constuct object with our given data 
+				//Construct object with our given data
 				Student curStudent = new Student(name, schoolName, gradeData);
 				//Add to array of Students 
 				students[j] = curStudent;
 			}
-			/*
-			//Sort student objects using a comparator. First compare gpa, if those are the same, then compare grade hours 
-			Arrays.sort(students, new StudentComparator());
-			//Print out name of last value in array which is valedictorian
-			System.out.println(schoolName + " = " + students[students.length - 1].name);
-			*/
 			//Initialize top student 
 			Student topStudent = null; 
 			//Loop through amount of students
