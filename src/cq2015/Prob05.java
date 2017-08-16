@@ -44,6 +44,7 @@ public class Prob05{
 	}
 	//Comparator for sorting by year 
 	public static class CapIncomeYearComparator implements Comparator<Income>{
+		@Override
 		public int compare(Income a, Income b){
 			if(a.year > b.year){
 				return 1;

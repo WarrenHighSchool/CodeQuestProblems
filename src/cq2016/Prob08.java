@@ -24,6 +24,7 @@ public class Prob08{
 	}
 	//comparator for sorting the array of song objects 
 	public static class SongComparator implements Comparator<Song>{
+		@Override
 		public int compare(Song a, Song b){
 			//To prevent authors with all capitals in their name from being sorted impropely, we take the effective authors, split them up, take their first word, 
 			//and make sure only the first letter is capitalized. We ignore the rest of the words for purposes of sorting 

@@ -52,6 +52,7 @@ public class Prob06 {
     }
     //Comparator for Collections.sort to compare two Person objects(comparing their score)
     public static class PersonComparator implements Comparator<Person>{
+        @Override
         public int compare(Person p1, Person p2){
             if(p1.getScore() > p2.getScore()){
                 return 1;

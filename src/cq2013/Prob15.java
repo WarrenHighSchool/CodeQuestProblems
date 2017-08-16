@@ -63,8 +63,6 @@ public class Prob15 {
             BufferedReader br = new BufferedReader(new FileReader(filePath));
             //Grab amtLogins
             int amtLogins = Integer.parseInt(br.readLine());
-            //Create hashmap for username and user object to retrieve an instantiation easier
-            Map<String, User> userMappings = new HashMap<>();
             //Create array of User objects
             User[] users = new User[amtLogins];
             //Loop through amtLogins
@@ -82,8 +80,6 @@ public class Prob15 {
                 String digest = saltAndDigest[1];
                 //Add that into the users array
                 users[i] = new User(name, salt, digest);
-                //Add that into the hashmap
-                userMappings.put(name, users[i]);
             }
             //Skip that empty line
             br.readLine();
@@ -93,10 +89,12 @@ public class Prob15 {
                 MessageDigest md = MessageDigest.getInstance("MD5");
                 //Split into tokens
                 String[] tokens = inLine.split(", ");
+                //Initialize userIndex for easily retrieving users(eliminates the use for a hashmap)
+                int userIndex = Integer.MIN_VALUE;
                 //If the name we just got exists in the users array, continue
-                if(exists(users, tokens[0])){
-                    //Use our hashmap to retrieve the current user based off the name(we already know that they exist)
-                    User curUser = userMappings.get(tokens[0]);
+                if((userIndex = exists(users, tokens[0])) != -1){
+                    //Use the userIndex int given by the exists function
+                    User curUser = users[userIndex];
                     //Concatenate the salt and password together into a string
                     String concatSaltAndPass = curUser.getSalt().concat(tokens[1]);
                     //Transform that string into an array of bytes using the UTF-8 encoding
@@ -135,18 +133,18 @@ public class Prob15 {
     }
 
     /**
-     * returns a boolean based on if a user in the array's username is equal to the string
+     * returns an index of the user(as a string) in the array of users. -1 is returned if not found
      *
      * @param users the array of users to check
      * @param s the username you are checking for
-     * @return true of false based on if the user actually exists
+     * @return the index of the user in the user array. returns -1 if not found
      */
-    public static boolean exists(User[] users, String s){
-        for(User u : users){
-            if(u.getUsername().equals(s)){
-                return true;
+    public static int exists(User[] users, String s){
+        for(int i = 0; i < users.length; i++) {
+            if(users[i].getUsername().equals(s)) {
+                return i;
             }
         }
-        return false;
+        return -1;
     }
 }
