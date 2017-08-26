@@ -2,107 +2,32 @@ package cq2015;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.Map;
+import java.util.HashMap;
 
 public class Prob11{
-	//Numbered group characters 
-	static final char[] numberedGroupChars = {'b', 'f', 'p', 'v', 'c', 'g', 'j', 'k', 'q', 's', 'x', 'z', 'd', 't', 'l', 'm', 'n', 'r', 'h', 'w'};
-	//File path
-	public static final String filePath = "inputs/2015/Prob13.in.txt";
-	//Class for soundex word 
-	public static class SoundexWord{
-		//Instance variables 
-		public String soundex;
-		public int amtGenerated;
+	//Path to file
+	public static final String filePath = "inputs/2014/Prob11.in.txt";
 
-		/**
-		 * Takes a certain soundex generated from a word, and stores it into a string, also having a counter. If a specific soundex occurs more than once,
-		 * then amtGenerated will be at a value greater than one and will be printed out.
-		 *
-		 * @param soundex the soundex generated from going through the word
-		 */
-		public SoundexWord(String soundex){
-			this.soundex = soundex;
-			amtGenerated = 1;
-		}
-
-		/**
-		 * Retrieves the current soundex
-		 *
-		 * @return the soundex as a string
-		 */
-		public String getSoundex(){
-			return soundex;
-		}
-
-		/**
-		 * Retrieves the current amount of times this soundex was generated
-		 *
-		 * @return amount specific soundex was generated
-		 */
-		public int getAmtGenerated(){
-			return amtGenerated;
-		}
-
-		/**
-		 * Increments amtGenerated
-		 */
-		public void incremenetAmtGenerated(){
-			amtGenerated++;
-		}
-
-		/**
-		 * Returns the soundex with the amount generated following it
-		 *
-		 * @return soundex with amtGenerated in format "soundex amtGenerated"
-		 */
-		public String toString(){
-			return soundex + " " + amtGenerated;
-		}
-		
-	}
-	//Main
 	public static void main(String[] args){
-		try {
-			//New BufferedReader object
+		try{
+			//Prepare to read file
 			BufferedReader br = new BufferedReader(new FileReader(filePath));
-			//Get test cases
+			//Grab test cases
 			int T = Integer.parseInt(br.readLine());
 			//Loop through test cases
-			while (T-- > 0) {
-				//Grab number of names that follow
+			while(T-- > 0){
+				//Hashmap for keeping track of how many soundex's are generated
+				Map<Character, Integer> mappings = new HashMap<>();
+				//Grab amount of names
 				int N = Integer.parseInt(br.readLine());
-				//Initialize empty array of SoundexWord type
-				SoundexWord[] words = new SoundexWord[N];
 				//Loop through names
-				for (int i = 0; i < N; i++) {
-					//Read name
-					String name = br.readLine();
-					/*Make conditionals for each group like so:
-					Group 1: b, f, p, v
-					Group 2: c, g, j, k, q, s, x, z
-					Group 3: d, t
-					Group 4: l
-					Group 5: m, n
-					Group 6: r
-					Wild: h, w (wild means they match letters from any group 1-6)
-					*/
-					String soundex = "";
-					//One for loop for each step(one extra for loop to find first letter of numbered group char)
-					//Find index of first numbered group char
-					int indexOfNumberedGroupChar = 0;
-					for (int j = 0; j < name.length(); j++) {
-						char curChar = name.charAt(j);
-						if (contains(curChar)) {
-							indexOfNumberedGroupChar = j;
-							break;
-						}
-					}
-					for (int j = indexOfNumberedGroupChar; j < name.length(); j++) {
-						char curChar = name.charAt(indexOfNumberedGroupChar);
-						char nextChar = name.charAt(j + 1);
-						int curCharGroup = -1;
-						int nextCharGroup = -1;
-						if(!(curChar == 'h' || curChar == 'w')){
+				while(N-- > 0){
+					//Read line
+					String inLine = br.readLine();
+					for(int i = 0; i < inLine.length(); i++){
+						char curChar = inLine.charAt(i);
+						if(isInNumberedGroup(curChar)){
 
 						}
 					}
@@ -112,18 +37,13 @@ public class Prob11{
 			e.printStackTrace();
 		}
 	}
-	
-	public static boolean contains(char curChar){
-		for(char c: Prob11.numberedGroupChars){
-			if (c == curChar){
-				return true;
-			}
-		}
-		return false;
-	}
-	
+
+	/**
+	 * returns the group for a designated character
+	 * @param c the character to get the group for
+	 * @return the group number of the character
+	 */
 	public static int getGroup(char c){
-		int defReturn = -1;
 		if(c == 'b' || c == 'f' || c == 'p' || c == 'v'){
 			return 1;
 		}
@@ -142,6 +62,20 @@ public class Prob11{
 		else if (c == 'r'){
 			return 6;
 		}
-		return defReturn;
+		return -1;
 	}
+
+	/**
+	 * returns true or false based on if the character is in a numbered group
+	 * @param c the character to check for in a numbered group
+	 * @return true or false based on if the character is a part of the numbered groups
+	 */
+	public static boolean isInNumberedGroup(char c){ return getGroup(c) >= 1 && getGroup(c) <= 6; }
+
+	/**
+	 * returns true or false based on if the character is either 'h' or 'w'
+	 * @param c the character to check if it is a wildcard character
+	 * @return true or false based on if the character is a wildcard character or not
+	 */
+	public static boolean isWildLetter(char c){ return c == 'h' || c == 'w'; }
 }

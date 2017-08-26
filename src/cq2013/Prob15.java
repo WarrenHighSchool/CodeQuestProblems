@@ -4,8 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
-import java.util.Map;
-import java.util.HashMap;
 
 /**
  * Created by RobertPC on 8/7/2017.
@@ -81,7 +79,7 @@ public class Prob15 {
                 //Add that into the users array
                 users[i] = new User(name, salt, digest);
             }
-            //Skip that empty line
+            //Skip the empty line
             br.readLine();
             //Now loop while br isn't at end of file
             while((inLine = br.readLine()) != null){
@@ -90,7 +88,7 @@ public class Prob15 {
                 //Split into tokens
                 String[] tokens = inLine.split(", ");
                 //Initialize userIndex for easily retrieving users(eliminates the use for a hashmap)
-                int userIndex = Integer.MIN_VALUE;
+                int userIndex;
                 //If the name we just got exists in the users array, continue
                 if((userIndex = exists(users, tokens[0])) != -1){
                     //Use the userIndex int given by the exists function

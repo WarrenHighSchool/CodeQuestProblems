@@ -41,7 +41,7 @@ public class Prob09 {
                 //Sort that array
                 Arrays.sort(numbers);
                 double mean = 0.0;
-                //Find meanot.dd
+                //Find mean
                 for(int i = 0; i < numbers.length; i++){
                     mean += numbers[i];
                 }

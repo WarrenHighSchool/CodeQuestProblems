@@ -110,9 +110,7 @@ public class Prob07{
 					//Make new object and assign into our ArrayList
 					enemyShips.add(new EnemyShip(shipName, shipClass, xPos, yPos));
 				}
-				//Initialize amount destroyed
-				int amtDestroyed = 0;
-				while(amtDestroyed < N){
+				while(enemyShips.size() > 0){
 					//find lowest x. if x's are same, compare the two to get lowest y
 					EnemyShip curLowest = enemyShips.get(0);
 					for(int i = 1; i < enemyShips.size(); i++){
@@ -131,18 +129,14 @@ public class Prob07{
 							}
 						}
 					}
-					//Once found the lowest x(or highest y with lowest x), mark index it is at
-					int destrIndex = enemyShips.indexOf(curLowest);
 					//once print out proper message that it is removed
 					System.out.println("Destroyed Ship: " + curLowest.toString());
 					//remove ship from arraylist 
-					enemyShips.remove(destrIndex);
+					enemyShips.remove(curLowest);
 					//call function to move all ships after we destroy one
-					for(int i = 0; i < enemyShips.size(); i++){
-						enemyShips.get(i).advance();
+					for(EnemyShip e : enemyShips){
+						e.advance();
 					}
-					//Increase destroyed count
-					amtDestroyed++;
 				}
 			}
 			//Clean up
