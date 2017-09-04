@@ -104,10 +104,10 @@ public class Prob15 {
                     //Create new StringBuffer
                     StringBuffer buf = new StringBuffer();
                     //Loop through hashed bytes array
-                    for(int i = 0; i < hashedBytes.length; i++){
+                    for(byte b : hashedBytes){
                         //Code given in problem
-                        buf.append(Integer.toHexString((hashedBytes[i] >>> 4) & 0x0F));
-                        buf.append(Integer.toHexString(0x0F & hashedBytes[i]));
+                        buf.append(Integer.toHexString((b >>> 4) & 0x0F));
+                        buf.append(Integer.toHexString(0x0F & b));
                     }
                     //Assign hashed string(use this to check with the digest for the user to authenticate)
                     String hashedString = buf.toString();
