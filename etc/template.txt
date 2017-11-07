@@ -1,0 +1,26 @@
+//Template for problems
+
+package cq0000;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+
+public class Prob02 {
+    //String to file
+    public static final String filePath = "";
+
+    public static void main(String[] args){
+        try{
+            //Initialize bufferedreader
+            BufferedReader br = new BufferedReader(new FileReader(filePath));
+            //Get test cases
+            int T = Integer.parseInt(br.readLine());
+            //Loop through test cases
+            while(T-- > 0){
+
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+}

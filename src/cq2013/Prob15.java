@@ -90,7 +90,7 @@ public class Prob15 {
                 //Initialize userIndex for easily retrieving users(eliminates the use for a hashmap)
                 int userIndex;
                 //If the name we just got exists in the users array, continue
-                if((userIndex = exists(users, tokens[0])) != -1){
+                if((userIndex = getIndex(users, tokens[0])) != -1){
                     //Use the userIndex int given by the exists function
                     User curUser = users[userIndex];
                     //Concatenate the salt and password together into a string
@@ -113,13 +113,15 @@ public class Prob15 {
                     String hashedString = buf.toString();
                     //Check if the digest is equals to the current user's digest
                     if(curUser.getDigest().equals(hashedString)){
+                        //If digest from input file comes out to be the same as the hashed string, authorize
                         System.out.println(tokens[0] + " Authorized");
                     }
                     else{
+                        //Otherwise print Authorized Denied since the user exists, they just put in the wrong password
                         System.out.println(tokens[0] + " Authorized Denied");
                     }
                 }else{
-                    //If they don't exist, straight up deny them
+                    //If they don't exist, then just deny them
                     System.out.println(tokens[0] + " Denied");
                 }
             }
@@ -137,7 +139,7 @@ public class Prob15 {
      * @param s the username you are checking for
      * @return the index of the user in the user array. returns -1 if not found
      */
-    public static int exists(User[] users, String s){
+    public static int getIndex(User[] users, String s){
         for(int i = 0; i < users.length; i++) {
             if(users[i].getUsername().equals(s)) {
                 return i;
