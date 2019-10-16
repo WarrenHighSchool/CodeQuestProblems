@@ -29,8 +29,10 @@ public class Prob11 {
                 int Bb = Integer.parseInt(inLineArr[9]);
                 /*
                     Check if the foreground color is "close" enough the the chroma key.
+                    The foreground color is "close" enough if it's distance to the
+                    chroma key is less than or equal to the tolerance.
                     If so, then output the color of the background. If not, then output
-                    the color of the foreground
+                    the color of the foreground.
                 */
                 //Calculate "distance" between foreground color and chroma key
                 double distance = Math.sqrt(

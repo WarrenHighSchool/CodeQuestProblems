@@ -11,7 +11,15 @@ public class Prob06_v2{
 		public String gradeData;
 		public double gpa;
 		public int totalCreditHours;
-		//Constructor 
+
+		/**
+		 * Constructs a student object with their name, school, and grade data. The grade data
+		 * is used to automatically calculate the student's GPA and total credit hours.
+		 *
+		 * @param name the student's name
+		 * @param school the student's school
+		 * @param gradeData the student's grade data.
+		 */
 		public Student(String name, String school, String gradeData){
 			this.name = name;
 			this.school = school;

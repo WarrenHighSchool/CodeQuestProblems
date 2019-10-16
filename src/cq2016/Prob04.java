@@ -35,6 +35,7 @@ public class Prob04{
 	public static boolean isAnagram(String first, String second){
 		//Default return value to true, since we are only using this method in hopes of getting false 
 		boolean returnValue = true;
+		//If the two strings don't have the same amount of letters, it is impossible for them to be anagrams.
 		if(first.length() != second.length()){
 			return false;
 		}

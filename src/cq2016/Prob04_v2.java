@@ -42,12 +42,13 @@ public class Prob04_v2{
 		//sort char arrays 
 		Arrays.sort(word1Letters);
 		Arrays.sort(word2Letters);
-		//Check to see mismatch, if there is a single mismatch, then it isnt an anagram 
+		//Check to see mismatch, if there is a single mismatch, then it isn't an anagram
 		for(int i = 0; i < word1Letters.length; i++){
 			if(word1Letters[i] != word2Letters[i]){
 				return false;
 			}
 		}
+		//If no mismatches are found, return true
 		return true;
 	}
 }

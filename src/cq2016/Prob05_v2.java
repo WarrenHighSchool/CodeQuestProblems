@@ -12,6 +12,7 @@ public class Prob05_v2{
 		try{
 			//New DecimalFormat object
 			DecimalFormat df = new DecimalFormat("#.00");
+			//Set rounding mode to standard rounding
 			df.setRoundingMode(RoundingMode.HALF_UP);
 			//New BufferedReader object
 			BufferedReader br = new BufferedReader(new FileReader(fileIn));
